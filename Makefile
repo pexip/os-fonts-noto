@@ -95,8 +95,10 @@ FONTS_SANS_REGULAR := \
 
 PREFIX ?= /usr/share/fonts/truetype/noto
 
+all:
+
 install: $(FONTS_SANS_REGULAR)
 	mkdir -p $(DESTDIR)$(PREFIX)
 	install --mode=0644 --target-directory=$(DESTDIR)$(PREFIX) $^
 
-.PHONY: install
+.PHONY: all install
