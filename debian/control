@@ -6,20 +6,40 @@ Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.2
 Homepage: http://www.google.com/get/noto/
 
-Package: fonts-noto-sans-regular
+Package: fonts-noto-sans-base
 Architecture: all
 Depends: ${misc:Depends}
 Description: Multi-purpose font with broad language support
  The Noto family of fonts aims to support all of the world's languages
  with a consistency of visual design.
  .
- This package provides the sans-serif families with regular weights.
+ This package provides the base infrastructure for sans-serif families.
 
-Package: fonts-noto-sans
+Package: fonts-noto-sans-regular
 Architecture: all
-Depends: fonts-noto-sans-regular (=${source:Version}), ${misc:Depends}
+Depends: fonts-noto-sans-base (=${source:Version}), ${misc:Depends}
 Description: Multi-purpose font with broad language support
  The Noto family of fonts aims to support all of the world's languages
  with a consistency of visual design.
  .
- This package provides the sans-serif families.
+ This package provides the sans-serif families with regular weights.
+
+Package: fonts-noto-sans-bold
+Architecture: all
+Depends: fonts-noto-sans-base (=${source:Version}), ${misc:Depends}
+Description: Multi-purpose font with broad language support
+ The Noto family of fonts aims to support all of the world's languages
+ with a consistency of visual design.
+ .
+ This package provides the sans-serif families with bold weights.
+
+Package: fonts-noto-sans
+Architecture: all
+Depends: fonts-noto-sans-regular (=${source:Version}),
+  fonts-noto-sans-bold (=${source:Version}),
+  ${misc:Depends}
+Description: Multi-purpose font with broad language support
+ The Noto family of fonts aims to support all of the world's languages
+ with a consistency of visual design.
+ .
+ This package provides the sans-serif families in all weights.

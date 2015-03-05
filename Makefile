@@ -85,7 +85,7 @@ LANGUAGE_FONTS_SANS_REGULAR := \
 	NotoSansVai-Regular.ttf \
 	NotoSansYi-Regular.ttf
 
-# Multilingual OTF, with Simplified Chinese as the default
+# Multilingual OTF, with Simplified Chinese as the default language
 CJK_FONTS_SANS_REGULAR := NotoSansCJKsc-Regular.otf
 
 FONTS_SANS_REGULAR := \
@@ -93,12 +93,47 @@ FONTS_SANS_REGULAR := \
 	$(CJK_FONTS_SANS_REGULAR) \
 	$(LANGUAGE_FONTS_SANS_REGULAR)
 
+LANGUAGE_FONTS_SANS_BOLD := \
+	NotoNaskhArabic-Bold.ttf \
+	NotoSansArmenian-Bold.ttf \
+	NotoSansBengali-Bold.ttf \
+	NotoSansCham-Bold.ttf \
+	NotoSansDevanagari-Bold.ttf \
+	NotoSansEthiopic-Bold.ttf \
+	NotoSansGeorgian-Bold.ttf \
+	NotoSansGujarati-Bold.ttf \
+	NotoSansGurmukhi-Bold.ttf \
+	NotoSansHebrew-Bold.ttf \
+	NotoSansKannada-Bold.ttf \
+	NotoSansKhmer-Bold.ttf \
+	NotoSansLao-Bold.ttf \
+	NotoSansMalayalam-Bold.ttf \
+	NotoSansMyanmar-Bold.ttf \
+	NotoSansSinhala-Bold.ttf \
+	NotoSansTamil-Bold.ttf \
+	NotoSansTelugu-Bold.ttf \
+	NotoSansThai-Bold.ttf
+
+# Multilingual OTF, with Simplified Chinese as the default language
+CJK_FONTS_SANS_BOLD := NotoSansCJKsc-Bold.otf
+
+FONTS_SANS_BOLD := \
+	NotoSans-Bold.ttf \
+	$(CJK_FONTS_SANS_BOLD) \
+	$(LANGUAGE_FONTS_SANS_BOLD)
+
 PREFIX ?= /usr/share/fonts/truetype/noto
 
 all:
 
-install: $(FONTS_SANS_REGULAR)
-	mkdir -p $(DESTDIR)$(PREFIX)
-	install --mode=0644 --target-directory=$(DESTDIR)$(PREFIX) $^
+install-sans-regular: $(FONTS_SANS_REGULAR)
+	mkdir -p $(DESTDIR)$(PREFIX)/sans
+	install --mode=0644 --target-directory=$(DESTDIR)$(PREFIX)/sans $^
 
-.PHONY: all install
+install-sans-bold: $(FONTS_SANS_BOLD)
+	mkdir -p $(DESTDIR)$(PREFIX)/sans
+	install --mode=0644 --target-directory=$(DESTDIR)$(PREFIX)/sans $^
+
+install: install-sans-regular install-sans-bold
+
+.PHONY: all install install-sans-regular install-sans-bold
