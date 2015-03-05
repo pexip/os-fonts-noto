@@ -14,3 +14,12 @@ Description: Multi-purpose font with broad language support
  with a consistency of visual design.
  .
  This package provides the sans-serif families with regular weights.
+
+Package: fonts-noto-sans
+Architecture: all
+Depends: fonts-noto-sans-regular (=${source:Version}), ${misc:Depends}
+Description: Multi-purpose font with broad language support
+ The Noto family of fonts aims to support all of the world's languages
+ with a consistency of visual design.
+ .
+ This package provides the sans-serif families.
