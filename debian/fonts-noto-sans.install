@@ -1,1 +1,1 @@
-debian/fc/65-noto-sans-regular.conf etc/fonts/conf.avail
+debian/fc/65-noto-sans.conf etc/fonts/conf.avail
