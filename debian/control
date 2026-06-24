@@ -5,7 +5,7 @@ Maintainer: Pexip AS <packaging@pexip.com>
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.2
 Homepage: http://www.google.com/get/noto/
-X-Pexip-Note: fonts-noto is a PexOS-specific package containing the Noto family
+XS-Pexip-Note: fonts-noto is a PexOS-specific package containing the Noto family
  of fonts for use on-product.
 
 Package: fonts-noto-sans-base
